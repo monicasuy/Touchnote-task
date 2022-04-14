@@ -1,10 +1,8 @@
 import '../stylesheets/Button.css';
 
-
-
 const Button = ({ label, handleClick, disabled }) => (
   <button
-    className="btn btn-default"
+    className="btn btn-ghost"
     disabled={disabled}
     onClick={handleClick}
   >

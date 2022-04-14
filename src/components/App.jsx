@@ -1,14 +1,9 @@
-//import logo from './logo.svg';
 import '../stylesheets/App.css';
 import React from "react";
 import Button from './Button'
-// import ReactPaginate from 'react-paginate';
-// import Pagination from '@mui/material/Pagination';
-// import Stack from '@mui/material/Stack';
+
 
 class App extends React.Component {
-
-    // Constructor
 
     state = {
       items: [],
@@ -75,7 +70,7 @@ class App extends React.Component {
     render() {
         const { DataisLoaded, items } = this.state;
         if (!DataisLoaded) return <div>
-            <h1> Please wait some time.... </h1> </div> ;
+            <h1> Please wait :) </h1> </div> ;
 
       console.log('rendering');
         return (
@@ -87,7 +82,6 @@ class App extends React.Component {
                     <h2>{ item.name }</h2>
                     <p><strong>Height:</strong> { item.height }cm</p>
                     <p><strong>Hair colour:</strong> { item.hair_color }</p>
-                    <p><strong>Mass:</strong> { item.mass }</p>
                     </div>
                 ))
               }
@@ -95,33 +89,12 @@ class App extends React.Component {
           <Button disabled={this.state.currentPage <= 1 ? true : false} label="Previous" handleClick={this.handlePreviousClick}/>
           <div>{this.state.currentPage}</div>
           <Button disabled={this.state.currentPage >= this.state.totalPages ? true : false} label="Next" handleClick={this.handleNextClick}/>
+          <div>
           <Button disabled={false}label="Sort" handleClick={this.sortByMass}/>
+          </div>
         </div>
     );
 }
 }
 
 export default App;
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
