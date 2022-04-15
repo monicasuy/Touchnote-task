@@ -71,3 +71,7 @@ h1 {
   color: rgb(233, 229, 11);
   font-family: "Poller One", cursive;
 }
+
+#page {
+  color: white;
+}
