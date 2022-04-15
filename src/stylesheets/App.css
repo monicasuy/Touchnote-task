@@ -41,28 +41,33 @@
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 20px rgb(233, 229, 11);
   align-items: center;
   margin: 20px;
   border-radius: 10px;
+  padding-bottom: 20px;
 }
 
 .card-character h2 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin: 20px;
 }
 
 .card-character p {
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.4;
-  opacity: 0.7;
-  margin-bottom: 0;
-  margin-top: 8px;
+  opacity: 0.9;
+  margin: 8px;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   grid-gap: 16px;
+}
+
+h1 {
+  color: rgb(233, 229, 11);
+  font-family: "Poller One", cursive;
 }

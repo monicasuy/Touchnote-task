@@ -87,7 +87,7 @@ class App extends React.Component {
 
         return (
         <div className = "App">
-          <h1> Star Wars Characters </h1>
+          <h1> STAR WARS CHARACTERS </h1>
           <div className="cards"> {
             // We iterate through the data in order to display the name, height and hair colour
                 items.map((item) => (
