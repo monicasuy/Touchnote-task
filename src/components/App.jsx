@@ -24,12 +24,11 @@ class App extends React.Component {
     handleNextClick = () => {
       const { totalPages } = this.state;
       this.setState({
-        currentPage:
-          this.state.currentPage > totalPages
-            ? totalPages
-            : this.state.currentPage + 1
+        currentPage: this.state.currentPage > totalPages
+        ? totalPages
+        : this.state.currentPage + 1
       });
-     this.fetchData()
+      this.fetchData()
     }
 
 
@@ -45,8 +44,8 @@ class App extends React.Component {
           this.state.currentPage < 1
             ? 1
             : this.state.currentPage - 1
-      }); this.fetchData()
-
+      });
+      this.fetchData()
     };
 
     // Function that sorts the cards according to mass and saves that into a new variable sortedItems
@@ -67,6 +66,8 @@ class App extends React.Component {
     // we set items in state to be the "results" part of the json which is where the information we
     // want to iterate through is
     fetchData = () => {
+      console.log('fetching data')
+      console.log(this.state.currentPage)
       fetch(
 `https://swapi.dev/api/people/?page=${this.state.currentPage}`)
             .then((res) => res.json())
@@ -104,11 +105,11 @@ class App extends React.Component {
           {/* We tell the button to run handlePreviousClick function when the button is clicked */}
           <Button disabled={this.state.currentPage <= 1 ? true : false} label="Previous" handleClick={this.handlePreviousClick}/>
           {/* We display the currentPage number */}
-          <div id="page">{this.state.currentPage}</div>
+          <div id="page">{this.state.currentPage - 1}</div>
           {/* In the next button we check if the currentPage is equal or bigger than totalPages in order to disable the button or not */}
           {/* We want the button to be disabled when it reaches the last page */}
           {/* We tell the button to run handleNextClick function when the button is clicked */}
-          <Button disabled={this.state.currentPage >= this.state.totalPages ? true : false} label="Next" handleClick={this.handleNextClick}/>
+          <Button disabled={this.state.currentPage > this.state.totalPages ? true : false} label="Next" handleClick={this.handleNextClick}/>
           <div>
           {/* The Sort button is never disabled since we want to be able to use it in all pages */}
           {/* We tell the button to run the function sortByMass when clicked so the items will be sorted by mass */}
