@@ -66,8 +66,6 @@ class App extends React.Component {
     // we set items in state to be the "results" part of the json which is where the information we
     // want to iterate through is
     fetchData = () => {
-      console.log('fetching data')
-      console.log(this.state.currentPage)
       fetch(
 `https://swapi.dev/api/people/?page=${this.state.currentPage}`)
             .then((res) => res.json())
