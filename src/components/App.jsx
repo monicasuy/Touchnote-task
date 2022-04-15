@@ -105,6 +105,9 @@ class App extends React.Component {
           {/* We tell the button to run handlePreviousClick function when the button is clicked */}
           <Button disabled={this.state.currentPage <= 1 ? true : false} label="Previous" handleClick={this.handlePreviousClick}/>
           {/* We display the currentPage number */}
+          {/* We subtract 1 as an attempt to display the number that is actually being fetched */}
+          {/* since the button doesn't start working until the second click so with the first one it'll show the first page still */}
+          {/* Otherwise this number was always out of sync with the actual page being shown */}
           <div id="page">{this.state.currentPage - 1}</div>
           {/* In the next button we check if the currentPage is equal or bigger than totalPages in order to disable the button or not */}
           {/* We want the button to be disabled when it reaches the last page */}
